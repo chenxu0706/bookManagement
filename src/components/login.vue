@@ -15,7 +15,7 @@
             <el-input></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button class="loginbutton" type="primary">登录</el-button>
+            <el-button class="loginbutton" @click="toHome()" type="primary">登录</el-button>
           </el-form-item>
         </el-form>
       </div>
@@ -24,7 +24,15 @@
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        data:{},
+        methods:{
+          toHome:function () {
+            this.$router.push({
+              path: '/home'
+            })
+          }
+        }
     }
 </script>
 
