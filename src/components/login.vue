@@ -8,11 +8,11 @@
           登录/Login
         </div>
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-          <el-form-item class="labelCol" label="用户名" prop="name">
-            <el-input></el-input>
+          <el-form-item class="labelCol"   label="用户名" prop="name">
+            <el-input v-model="name" clearable></el-input>
           </el-form-item>
-          <el-form-item class="labelCol" label="密码" prop="password">
-            <el-input></el-input>
+          <el-form-item class="labelCol"  label="密码" prop="password">
+            <el-input v-model="password" clearable show-password></el-input>
           </el-form-item>
           <el-form-item>
             <el-button class="loginbutton" @click="toHome()" type="primary">登录</el-button>
@@ -25,7 +25,12 @@
 <script>
     export default {
         name: "login",
-        data:{},
+        data(){
+          return{
+            name:'',
+            password:''
+          }
+        },
         methods:{
           toHome:function () {
             this.$router.push({
